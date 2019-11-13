@@ -1,0 +1,21 @@
+<!-- todo-item.component.html -->
+
+<!-- Because this is the html for the component, we don't need to do anything special to access 
+    component properties.
+-->
+<!-- There can be only one root item (div in this case) -->
+
+<!-- Dynamic Class Binding:-->
+<!-- Use the ngClasses directive, set to method in our class -->
+<div [ngClass]="setClasses()">
+    <p>
+    <!-- Set up a change event w.r.t. the checkbox. "onToggle" is defined in todo-item.component.ts -->
+    <input (change)="onToggle(todo)" type="checkbox" />
+    {{ todo.title }}
+    <!-- Set up a delete event w.r.t. the button. "onDelete" is defined in todo-item.component.ts -->
+    <button (click)="onDelete(todo)" class="del">x</button>
+    </p>
+</div>
+
+
+

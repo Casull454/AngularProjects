@@ -1,0 +1,12 @@
+
+<!-- Set up form for todo input -->
+<!-- We needed to go to app.module.ts to add import of FormsModule to get angular forms for this.-->
+<!-- We'll embed this form into the todos component. -->
+<!-- the ngSubmit handles things like defaults better than normal javascript submit-->
+<form class=form (ngSubmit)="onSubmit()">
+    <!-- Use ngModel to set up two way data binding, where second title pertains to the title we declared in the .ts file -->
+    <input type="text" name="title" [(ngModel)]="title"
+    placeholder="Add Todo...">
+    <!-- Note: if we added {{ title }} here, we'd get the data-bound string for the property we defined in .ts, updating as we type in input.-->
+    <input type="submit" value="Submit" class="btn">
+</form>
